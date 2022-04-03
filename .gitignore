@@ -1,15 +1,15 @@
 *
 !*/
 
+!SpringBootTestProject/.settings/**
 !SpringBootTestProject/src/**
 !SpringBootTestProject/pom.xml
 
-!SpringBootTestProject/src/**
-!SpringBootTestProject/pom.xml
-
+!_02_SpringBoot_static/.settings/**
 !_02_SpringBoot_static/src/**
 !_02_SpringBoot_static/pom.xml
 
+!_03_SpringBoot_web/.settings/**
 !_03_SpringBoot_web/src/**
 !_03_SpringBoot_web/pom.xml
 
