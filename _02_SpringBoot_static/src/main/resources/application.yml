@@ -1,0 +1,8 @@
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**  #修改靜態資源訪問路徑
+#  web:
+#    resources:
+#      static-locations: 
+#       - classpath:/kulustatic/
+#       - classpath:/static/

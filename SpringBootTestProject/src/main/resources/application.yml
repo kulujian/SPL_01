@@ -1,0 +1,71 @@
+name: kulu
+age: 39
+date: 2022/03/9
+
+#-練習
+student:
+  firstName: kulu
+  listName: jian
+  age: 39
+  boss: true
+  birthday: 1983/03/19
+  maps: 
+    name: Entri
+    age: 5
+  maps2:
+    name: Mary
+    age: 11
+  lists:
+    - name: 小白
+      age: 3
+    - name: 小黃
+      age: 4
+    - {name: 小黑, age: 1}
+  dog: 
+    name: 小紅
+    age: 5
+  arr:
+    - kulu
+    - jian
+  arr2: [kulu, jian]
+  dogMap:
+    xb: {name: 小白, age: 9}
+    xh: 
+      name: 小紅
+      age: 6
+      
+  
+student2: {name: kulu, age: 39}
+
+map:
+  k1: v1
+  k2: v2
+
+list:
+  - sang
+  - geng
+  - cao
+  - tang
+
+#-以下為物件集合用法
+students:
+  - {name: kulu, age: 39}
+  - {name: jian, age: 18}
+  - name: kulu.jian
+    age: 60
+
+#-佔位符用法(若無變數值，則使用預設值)
+server:
+  port: ${myPort:9981}
+#-myPort: 8081
+
+#-SpringBoot整合Mybatis相關配置
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.189:3306/finweb?characterEncoding=utf-8&serverTimezone=UTC
+    username: maxe0701
+    password: Love1025
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml  #-mapper映射文件路徑(預設路徑為：resources/)
+  type-aliases-package: com.kulu.SpringBootTest.domain  #-配置哪個package下的class(java bane)有默認的別名

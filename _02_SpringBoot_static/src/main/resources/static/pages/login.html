@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="no-ie">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+
+        <title>BeAdmin - Bootstrap Admin Theme</title>`
+
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+        <div id="app" class="row row-table page-wrapper">
+            <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 align-middle">
+                <div data-toggle="play-animation" data-play="fadeIn" data-offset="0" class="panel panel-dark panel-flat">
+                    <div class="panel-heading text-center">
+                        <a href="login.html#">
+                            <!-- <img src="../app/img/logo.png" alt="Image" class="block-enter img-rounded"> -->
+                        </a>
+                    </div>
+                    <p class="text-center mt-lg">
+                        <strong>
+                            SIGN IN TO CONTINUE.
+                        </strong>
+                    </p>
+                    <div class="panel-body">
+                        <form role="form" class="mb-lg">
+                            <div class="text-right mb-sm">
+                                <a href="login.html#" class="text-muted">
+                                    Need to Signup?
+                                </a>
+                            </div>
+                            <div>
+                                <input id="exampleInputEmail1" v-model="user.username" type="text" placeholder="請輸入帳號" class="form-control" />
+                                <span class="fa fa-envelope form-control-feebdack text-muted"></span>
+                            </div>
+                            <div>
+                                <input id="exampleInputPassword1" v-model="user.password" type="password" placeholder="請輸入密碼" class="form-control" />
+                                <span class="fa fa-envelope form-control-feebdack text-muted"></span>
+                            </div>
+                            <div class="clearfix">
+                                <div class="checkbox c-checkbox pull-left mt0">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <span class="fa fa-check"></span>
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="login.html#" class="text-muted">
+                                        Forgot your password?
+                                    </a>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-primary" @click="handleLogin()">
+                                    登入
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <!-- Vue 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- axios -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <script>
+            var v = new Vue({
+                el: "#app",
+                data: {
+                    user:{}
+                },
+                methods:{
+                    handleLogin(){
+                        //請求後台登入介面
+                        axios.post("http://localhost/sys_user/login", this.user).then((res)=>{
+                            // console.log(res);
+                            // 判斷是否成功 code == 200
+                            if(res.data.code == 200){
+                                // 如果登入成功，把數據賦值給 this.users
+                                // this.users = res.data.data;
+                                // alert("登入成功");
+                                // 存儲token
+                                localStorage.setItem("token", res.data.data.token);
+                                // 頁面跳轉
+                                location.href = "/index.html"
+                            }else{
+                                alert(res.data.msg);
+                            }
+                        })
+                        // .catch((error)=>{
+                        //     console.log("失敗: " + error);
+                        // })
+                    }
+                }
+            })
+        </script>
+
+    </body>
+</html>
