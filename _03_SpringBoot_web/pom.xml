@@ -40,6 +40,21 @@
 			    <artifactId>jjwt</artifactId>
 			    <version>0.9.1</version>
 			</dependency>
+		<!-- spring-boot-starter-aop 切面程式-->
+			<dependency>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-starter-aop</artifactId>
+			</dependency>
+		<!-- spring-boot-starter-thymeleaf 模板引擎 -->
+			<dependency>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+			</dependency>
+		<!-- spring-boot-starter-data-redis -->
+			<dependency>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-starter-data-redis</artifactId>
+			</dependency>
 			
 	</dependencies>
 	

@@ -17,7 +17,7 @@ import com.kulu.interceptor.LoginInterceptor;
  * @author user
  *
  */
-@Configuration
+//@Configuration
 public class LoginConfig implements WebMvcConfigurer {
 	
 

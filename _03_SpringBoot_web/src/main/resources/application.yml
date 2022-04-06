@@ -14,6 +14,7 @@ spring:
 #-2.配置修改為 false ( 使用 jdk動態代理 )
   aop:
     proxy-target-class: false
+    auto: true #-若需要將切面程式關閉，就改成false(預設不指定即為true)
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml  #-mapper映射文件路徑(預設路徑為：resources/)
   type-aliases-package: com.kulu.domain  #-配置哪個package下的class(java bane)有默認的別名

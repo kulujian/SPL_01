@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kulu.aop.InvokeLog;
 import com.kulu.domain.User;
 import com.kulu.mapper.UserMapper;
 import com.kulu.service.UserService;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 	
 	@Override
+	@InvokeLog	// 需要被切入或增加的方法需要加上對應的注解
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
 		return userMapper.findAll();

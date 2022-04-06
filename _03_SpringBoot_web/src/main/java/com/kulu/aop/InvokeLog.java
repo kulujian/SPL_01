@@ -1,11 +1,10 @@
-package com.kulu.resolver;
+package com.kulu.aop;
+
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
-import org.apache.ibatis.session.ExecutorType;
 
 /*
  * 	Annotation 自訂義註解的建構
@@ -22,8 +21,8 @@ import org.apache.ibatis.session.ExecutorType;
  *  	ex3. RUNTIME：編譯後記錄在類文件內，並在運行時由VM保留(可即時讀取使用)
  */
 
-@Target({ElementType.PARAMETER})		// 宣告作用範圍
-@Retention(RetentionPolicy.RUNTIME)		// 保留至某工作階段
-public @interface CurrentUserId {
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface InvokeLog {
 
 }
