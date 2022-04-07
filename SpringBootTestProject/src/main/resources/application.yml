@@ -66,6 +66,7 @@ spring:
     username: maxe0701
     password: Love1025
     driver-class-name: com.mysql.cj.jdbc.Driver
+    
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml  #-mapper映射文件路徑(預設路徑為：resources/)
   type-aliases-package: com.kulu.SpringBootTest.domain  #-配置哪個package下的class(java bane)有默認的別名

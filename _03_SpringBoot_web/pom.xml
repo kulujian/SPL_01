@@ -55,8 +55,30 @@
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-data-redis</artifactId>
 			</dependency>
+		<!-- JUnit  spring-boot-starter-test -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+			</dependency>
 			
 	</dependencies>
 	
+		<build>
+			<plugins>
+				<!-- Spring Boot 打包插件 -->	
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<!-- 
+					<configuration>
+						<profiles>
+							<profile>test</profile>
+							<profile>prod></profile>
+						</profiles>
+					</configuration>
+					 -->
+				</plugin>
+			</plugins>
+		</build>
 
 </project>
