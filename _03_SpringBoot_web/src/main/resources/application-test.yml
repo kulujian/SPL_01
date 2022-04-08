@@ -1,2 +1,23 @@
 server:
   port: 81
+  
+#-開啟日誌紀錄功能
+debug: true
+#-設定日誌級別(紀錄範圍)
+logging:
+  level:
+    com.kulu: debug
+    
+management:
+  endpoints:
+    enabled-by-default: true #-啟用所有端點
+    web:
+      exposure:
+        include: "*" #-曝露所有端點
+
+spring:
+#-SpringBoot Admin Server端 URL
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888

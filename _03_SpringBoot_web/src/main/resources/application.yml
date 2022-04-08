@@ -20,7 +20,9 @@ spring:
     port: 6379 #-redis連接埠號
 #-profile 環境切換配置
   profiles:
-    active: prod
+    active: test
+
+
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml  #-mapper映射文件路徑(預設路徑為：resources/)
